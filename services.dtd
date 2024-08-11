@@ -1,0 +1,26 @@
+<!ELEMENT Services (Service+)>
+
+<!ELEMENT Service (ServiceID, Type, Provider, Location, ServiceDetails, Availability)>
+<!ELEMENT ServiceID (#PCDATA)>
+<!ELEMENT Type (#PCDATA)>
+<!ELEMENT Provider (ProviderID, Name, ContactNumber, Address)>
+<!ELEMENT ProviderID (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT ContactNumber (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Location (LocationID, Name, Coordinates)>
+<!ELEMENT LocationID (#PCDATA)>
+<!ELEMENT Coordinates (#PCDATA)>
+<!ELEMENT ServiceDetails (Duration, Price, Category, Rating)>
+<!ELEMENT Duration (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT Category (#PCDATA)>
+<!ELEMENT Rating (#PCDATA)>
+<!ELEMENT Availability (AvailabilityID, Status, Slots)>
+<!ELEMENT AvailabilityID (#PCDATA)>
+<!ELEMENT Status (#PCDATA)>
+<!ELEMENT Slots (Slot+)>
+<!ELEMENT Slot (SlotID, StartTime, EndTime)>
+<!ELEMENT SlotID (#PCDATA)>
+<!ELEMENT StartTime (#PCDATA)>
+<!ELEMENT EndTime (#PCDATA)>

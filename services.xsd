@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  
+    <xs:element name="Services">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Service" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ServiceID" type="xs:string"/>
+                            <xs:element name="Type" type="ServiceType"/>
+                            <xs:element name="Provider">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ProviderID" type="xs:string"/>
+                                        <xs:element name="Name" type="xs:string"/>
+                                        <xs:element name="ContactNumber" type="PhoneNumber"/>
+                                        <xs:element name="Address" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Location">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="LocationID" type="xs:string"/>
+                                        <xs:element name="Name" type="xs:string"/>
+                                        <xs:element name="Coordinates" type="Coordinates"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ServiceDetails">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Duration" type="DurationType"/>
+                                        <xs:element name="Price" type="PriceType"/>
+                                        <xs:element name="Category" type="ServiceCategory"/>
+                                        <xs:element name="Rating" type="RatingType"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Availability">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="AvailabilityID" type="xs:string"/>
+                                        <xs:element name="Status" type="AvailabilityStatus"/>
+                                        <xs:element name="Slots">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Slot" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="SlotID" type="xs:string"/>
+                                                                <xs:element name="StartTime" type="TimeType"/>
+                                                                <xs:element name="EndTime" type="TimeType"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+ 
+    <xs:simpleType name="ServiceType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Electrical Repair"/>
+            <xs:enumeration value="Plumbing"/>
+            <xs:enumeration value="Carpentry"/>
+            <xs:enumeration value="Cleaning"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PhoneNumber">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3}-\d{3}-\d{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Coordinates">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d+\.\d+, \d+\.\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DurationType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d+ (hours|hour|minutes|minute)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="PriceType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="10000"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ServiceCategory">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Electrical"/>
+            <xs:enumeration value="Plumbing"/>
+            <xs:enumeration value="Carpentry"/>
+            <xs:enumeration value="Cleaning"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="RatingType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.0"/>
+            <xs:maxInclusive value="5.0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="AvailabilityStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Available"/>
+            <xs:enumeration value="Unavailable"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TimeType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{2}:\d{2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

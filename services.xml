@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xslt" href="services.xslt"?>
+<Services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="services.xsd">
+    <Service>
+        <ServiceID>S001</ServiceID>
+        <Type>Electrical Repair</Type>
+        <Provider>
+            <ProviderID>P001</ProviderID>
+            <Name>John's Electricals</Name>
+            <ContactNumber>123-456-7890</ContactNumber>
+            <Address>Bangalore, India</Address>
+        </Provider>
+        <Location>
+            <LocationID>L001</LocationID>
+            <Name>SG Palya</Name>
+            <Coordinates>12.9345, 77.6241</Coordinates>
+        </Location>
+        <ServiceDetails>
+            <Duration>2 hours</Duration>
+            <Price>1000.00</Price>
+            <Category>Electrical</Category>
+            <Rating>4.8</Rating>
+        </ServiceDetails>
+        <Availability>
+            <AvailabilityID>A001</AvailabilityID>
+            <Status>Available</Status>
+            <Slots>
+                <Slot>
+                    <SlotID>SL001</SlotID>
+                    <StartTime>08:00</StartTime>
+                    <EndTime>18:00</EndTime>
+                </Slot>
+            </Slots>
+        </Availability>
+    </Service>
+    <Service>
+        <ServiceID>S002</ServiceID>
+        <Type>Plumbing</Type>
+        <Provider>
+            <ProviderID>P002</ProviderID>
+            <Name>Plumbing Solutions</Name>
+            <ContactNumber>987-654-3210</ContactNumber>
+            <Address>Bangalore, India</Address>
+        </Provider>
+        <Location>
+            <LocationID>L002</LocationID>
+            <Name>Christ University</Name>
+            <Coordinates>12.9340, 77.6235</Coordinates>
+        </Location>
+        <ServiceDetails>
+            <Duration>1 hour</Duration>
+            <Price>800.00</Price>
+            <Category>Plumbing</Category>
+            <Rating>4.5</Rating>
+        </ServiceDetails>
+        <Availability>
+            <AvailabilityID>A002</AvailabilityID>
+            <Status>Unavailable</Status>
+            <Slots>
+                <Slot>
+                    <SlotID>SL002</SlotID>
+                    <StartTime>09:00</StartTime>
+                    <EndTime>17:00</EndTime>
+                </Slot>
+            </Slots>
+        </Availability>
+    </Service>
+</Services>
